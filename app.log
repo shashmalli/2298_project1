@@ -1,0 +1,18 @@
+2025-10-13 11:00:49,560 - DEBUG: Building SSL context
+2025-10-13 11:00:49,602 - DEBUG: Switching to SSL
+2025-10-13 11:00:49,606 - DEBUG: SSL has been enabled
+2025-10-13 11:00:49,606 - DEBUG: Starting authorization phase
+2025-10-13 11:00:49,606 - DEBUG: The provided initial strategy is caching_sha2_password
+2025-10-13 11:00:49,606 - INFO: package: mysql.connector.plugins
+2025-10-13 11:00:49,607 - INFO: plugin_name: caching_sha2_password
+2025-10-13 11:00:49,607 - INFO: AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-10-13 11:00:49,607 - DEBUG: Exchanging further packets
+2025-10-13 11:00:49,607 - DEBUG: caching_sha2_password completed succesfully
+2025-10-13 11:01:10,749 - DEBUG: Building SSL context
+2025-10-13 11:01:10,785 - DEBUG: Switching to SSL
+2025-10-13 11:01:10,788 - DEBUG: SSL has been enabled
+2025-10-13 11:01:10,788 - DEBUG: Starting authorization phase
+2025-10-13 11:01:10,788 - DEBUG: The provided initial strategy is caching_sha2_password
+2025-10-13 11:01:10,788 - DEBUG: Exchanging further packets
+2025-10-13 11:01:10,788 - DEBUG: caching_sha2_password completed succesfully
+2025-10-13 11:01:11,010 - INFO: User explodingkoala created with role user
