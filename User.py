@@ -23,13 +23,13 @@ class User:
     except Exception as e:
       self.db.rollback()
       if e.errno == 1062:  # Duplicate entry error code
-        u.logger.error(f"User {self.username} already exists.")
+        u.log_event("ERROR", f"User {self.username} already exists", 1)
         print(f"User {self.username} already exists.")
       else:
-        u.logger.error(f"Error creating user {self.username}: {e}")
+        u.log_event("ERROR", f"Error creating user {self.username}", 1)
         print("Error creating user. Please try again.\n")
     else:
-      u.logger.info(f"User {self.username} created with role {self.role}")
+      u.log_event("INFO", f"Created user {self.username} with role {self.role}", 1)
       print(f"User {self.username} registered successfully!\n")
     finally:
       self.db.close()
@@ -40,12 +40,11 @@ class User:
       user_record = self.db.execute_query("SELECT * FROM users WHERE user_name = %s", [(self.username)])
       if user_record:
         if User.check_password(password, user_record[0][2]):  # Assuming password hash is at index 2
-          u.logger.info(f"User {username} authenticated successfully")
           print(f"Welcome {username}\n")
           return user_record
     except Exception as e:
       self.db.rollback()
-      u.logger.warning(f"Authentication failed for user {username}: {e}")
+      u.log_event("ERROR", f"Authentication failed for user {username}", 1)
       print("Invalid username or password\n")
     finally:
       self.db.close()
