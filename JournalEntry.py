@@ -43,7 +43,7 @@ class JournalEntry:
       return res_set
     except Exception as e:
       self.db.rollback()
-      u.log_event("ERROR", "Error fetching journal entries", user_id)
+      u.log_event("ERROR", "Error fetching journal entries", user_id or 1)
       print("Error fetching journal entries. Please try again.\n")
     finally:
       self.db.close()

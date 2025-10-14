@@ -12,9 +12,10 @@ def register():
     print("Passwords do not match\n")
     return
   usr = User(new_username, role="user")
-  if usr.create_user(passwd):
-    journal_menu(usr)
+  new_usr = usr.create_user(passwd)
   usr.close_connection()
+  if new_usr:
+    journal_menu(usr)
 
 def login():
   usrnm = input("Enter username: ").strip()

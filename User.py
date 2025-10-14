@@ -31,6 +31,7 @@ class User:
     else:
       u.log_event("INFO", f"Created user {self.username} with role {self.role}", 1)
       print(f"User {self.username} registered successfully!\n")
+      return True
     finally:
       self.db.close()
   
